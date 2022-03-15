@@ -10,10 +10,18 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
+          <a href="{{ route('logout') }}" class="btn btn-danger mx-2">Logout</a>
           <h3 class="card-title">User List</h3>
           <a href="{{ route('adduser') }}" class=" btn btn-primary ml-3">Add new User</a>
         </div>
         <!-- /.card-header -->
+       {{-- / @if(session()->get('user')) --}}
+         {{-- {{ session()->all() }} --}}
+@php
+ $user= session()->get('user');
+ print_r($user->name);
+@endphp
+        {{-- @endif --}}
         <div class="card-body">
           <table class="table table-bordered" style="width: 100%">
             <thead>
