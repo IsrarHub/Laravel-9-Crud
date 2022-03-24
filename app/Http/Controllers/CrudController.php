@@ -78,7 +78,7 @@ class CrudController extends Controller
 
         $query=$this->obj::find($id)->delete();
         if($query){
-            redirect()->route('home');
+         return   redirect()->route('home');
         }
         else{
             echo "error";
